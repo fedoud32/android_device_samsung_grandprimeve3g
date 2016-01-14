@@ -6,4 +6,4 @@
 * Processor: 4*ARM Cortex-A7 @ 1.30 GHz
 * Cores: 4
 * Speed: 768 MHz - 1.30 GHz
-* Kernel Architecture: ARMv7 rev 1 (v71)
+* Kernel Architecture: ARMv7 Processor rev 5 (v71)
