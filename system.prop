@@ -1,0 +1,21 @@
+#
+# system.prop for coreprimeve3g
+#
+
+ro.sf.lcd_density=240
+ro.sf.lcd_width=154
+ro.sf.lcd_height=90
+
+debug.hwui.render_dirty_regions=false
+
+# Delay for ConnectivityChange broadcast (ms)
+conn.connectivity_change_delay = 0
+
+# NK console device
+persist.ttydev=ttyVUART0
+
+ro.secure=0
+ro.adb.secure=0
+service.adb.root=1
+ro.allow.mock.location=1
+ro.debuggable=1
