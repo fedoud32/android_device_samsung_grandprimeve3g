@@ -21,7 +21,7 @@
 #
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE                    := coreprimeve3g
+TARGET_OTA_ASSERT_DEVICE                    := grandprimeve3g
 
 # Architecture
 TARGET_ARCH                                 := arm
@@ -37,7 +37,7 @@ ARCH_ARM_HAVE_TLS_REGISTER                  := true
 ARCH_ARM_HAVE_NEON                          := true
 
 # Board
-TARGET_BOOTLOADER_BOARD_NAME                := coreprimeve3g
+TARGET_BOOTLOADER_BOARD_NAME                := grandprimeve3g
 TARGET_NO_BOOTLOADER                        := true
 
 # Platform
@@ -49,9 +49,9 @@ TARGET_BOARD_PLATFORM_GPU                   := mali-400 MP
 BOARD_KERNEL_CMDLINE                        := console=ttyS1,115200n8
 BOARD_KERNEL_BASE                           := 0x00000000
 BOARD_KERNEL_PAGESIZE                       := 2048
-#TARGET_KERNEL_SOURCE                       := kernel/samsung/coreprimeve3g
-#TARGET_KERNEL_CONFIG                       := cyanogenmod-coreprimeve3g_defconfig
-TARGET_PREBUILT_KERNEL                      := device/samsung/coreprimeve3g/kernel
+#TARGET_KERNEL_SOURCE                       := kernel/samsung/grandprimeve3g
+#TARGET_KERNEL_CONFIG                       := cyanogenmod-grandprimeve3g_defconfig
+TARGET_PREBUILT_KERNEL                      := device/samsung/grandprimeve3g/kernel
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE              := 16777216
@@ -67,10 +67,10 @@ BOARD_HAS_LARGE_FILESYSTEM                  := true
 
 # Recovery
 BOARD_HDPI_RECOVERY                         := true
-#TARGET_RECOVERY_INITRC                     := device/samsung/coreprimeve3g/recovery/recovery.rc
-TARGET_RECOVERY_FSTAB                       := device/samsung/coreprimeve3g/recovery.fstab
+#TARGET_RECOVERY_INITRC                     := device/samsung/grandprimeve3g/recovery/recovery.rc
+TARGET_RECOVERY_FSTAB                       := device/samsung/grandprimeve3g/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT                := BGRA_8888
-BOARD_CUSTOM_RECOVERY_KEYMAPPING            := ../../device/samsung/coreprimeve3g/recovery/recovery_keys.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING            := ../../device/samsung/grandprimeve3g/recovery/recovery_keys.c
 BOARD_USE_CUSTOM_RECOVERY_FONT              := \"roboto_15x24.h\"
 BOARD_HAS_NO_SELECT_BUTTON                  := true
 BOARD_HAS_NO_MISC_PARTITION                 := true
@@ -112,8 +112,8 @@ COMMON_GLOBAL_CFLAGS += -DMR0_AUDIO_BLOB
 BOARD_HAVE_BLUETOOTH                        := true
 BOARD_HAVE_BLUETOOTH_BCM                    := true
 BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY     := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/coreprimeve3g/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF                 := device/samsung/coreprimeve3g/bluetooth/libbt_vndcfg.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/grandprimeve3g/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF                 := device/samsung/grandprimeve3g/bluetooth/libbt_vndcfg.txt
 
 # Connectivity - Wi-Fi
 BOARD_WPA_SUPPLICANT_DRIVER                 := NL80211
@@ -142,11 +142,11 @@ BOARD_NO_APSME_ATTR                         := true
 #BOARD_PROVIDES_LIBRIL := true
 BOARD_FORCE_RILD_AS_ROOT                    := true
 BOARD_MOBILEDATA_INTERFACE_NAME             := "rmnet0"
-BOARD_RIL_CLASS                             := ../../../device/samsung/coreprimeve3g/ril/
+BOARD_RIL_CLASS                             := ../../../device/samsung/grandprimeve3g/ril/
 
 # Bootanimation
-TARGET_SCREEN_WIDTH                         := 480
-TARGET_SCREEN_HEIGHT                        := 800
+TARGET_SCREEN_WIDTH                         := 540
+TARGET_SCREEN_HEIGHT                        := 960
 
 #Bootanimation
 TARGET_BOOTANIMATION_PRELOAD                := true

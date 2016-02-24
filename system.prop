@@ -1,21 +1,31 @@
 #
-# system.prop for coreprimeve3g
+# system.prop for grandprimeve3g
 #
-
 ro.sf.lcd_density=240
 ro.sf.lcd_width=154
 ro.sf.lcd_height=90
+ro.opengles.version=131072
+ro.product.hardware=TSHARK2TABE_V1.0.0
 
 debug.hwui.render_dirty_regions=false
+
 
 # Delay for ConnectivityChange broadcast (ms)
 conn.connectivity_change_delay = 0
 
 # NK console device
 persist.ttydev=ttyVUART0
+persist.security.ams.enforcing=1
 
 ro.secure=0
 ro.adb.secure=0
 service.adb.root=1
 ro.allow.mock.location=1
 ro.debuggable=1
+ro.zygote=zygote32
+persist.sys.usb.config=mtp
+dalvik.vm.dex2oat-Xms=64m
+dalvik.vm.dex2oat-Xmx=512m
+dalvik.vm.image-dex2oat-Xms=64m
+dalvik.vm.image-dex2oat-Xmx=64m
+ro.dalvik.vm.native.bridge=0

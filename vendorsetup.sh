@@ -1,2 +1,2 @@
-add_lunch_combo cm_coreprimeve3g-eng
-add_lunch_combo cm_coreprimeve3g-userdebug
+add_lunch_combo cm_grandprimeve3g-eng
+add_lunch_combo cm_grandprimeve3g-userdebug

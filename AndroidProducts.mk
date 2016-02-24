@@ -15,5 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_coreprimeve3g.mk
+    $(LOCAL_DIR)/full_grandprimeve3g.mk
 
