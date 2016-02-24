@@ -1,7 +1,7 @@
-# Samsung Galaxy Core Prime Value Edition (SM-G361H).
+# Samsung Galaxy Grand Prime Value Edition (SM-G531H).
 
 * Manufacturer: Samsung
-* Model: SM-G361H (coreprimeve3g)
+* Model: SM-G531H (grandprimeve3g)
 * Hardware: Spreadtrum sc8830
 * Processor: 4*ARM Cortex-A7 @ 1.30 GHz
 * Cores: 4
