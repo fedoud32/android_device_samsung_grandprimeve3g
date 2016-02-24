@@ -1,5 +1,5 @@
 <!-- TinyHAL configuration file for GOD -->
-<tinyalsa-audio device="sc6820i audio">
+<tinyalsa-audio device="sc8830 audio">
 
    <!-- We are able to have most of our routing static so do that -->
    <path>
@@ -7,13 +7,24 @@
      <!-- DAC->Headphone -->
      <ctl name="HPL Playback Volume" val="8" />
      <ctl name="HPR Playback Volume" val="8" />
+     <ctl name="DACL Playback Volume" val="7" />
+     <ctl name="DACR Playback Volume" val="7" />
+
+     <ctl name="HPL CG Playback Volume1" val="63" />
+     <ctl name="HPR CG Playback Volume1" val="63" />
+     <ctl name="HPL CG Playback Volume2" val="7" />
+     <ctl name="HPR CG Playback Volume2" val="7" />
 
      <!-- DAC->Speaker -->
      <ctl name="SPKL Playback Volume" val="10" />
      <ctl name="SPKR Playback Volume" val="10" />
+     <ctl name="DACL Playback Volume" val="5" />
+     <ctl name="DACR Playback Volume" val="5" />
 
      <!-- DAC->Earpiece -->
      <ctl name="EAR Playback Volume" val="10" />
+     <ctl name="DACL Playback Volume" val="5" />
+     <ctl name="DACR Playback Volume" val="5" />
 
      <!-- ADC ->(main mic)  -->
      <ctl name="ADCL Capture Volume" val="12" />
@@ -25,22 +36,59 @@
 <private name="vb control">
    <func name="VBC Switch" val="arm" />
 </private>
-
-<private name="eq switch">
-  <func name="VBC EQ Switch" val="0" />
-</private>
-
 <private name="eq update">
   <func name="VBC EQ Update" val="0" />
 </private>
 
-<private name="eq profile">
-  <func name="VBC EQ Profile Select" val="0" />
+<private name="da eq switch">
+  <func name="VBC DA EQ Switch" val="0" />
+</private>
+
+<private name="ad01 eq switch">
+  <func name="VBC AD01 EQ Switch" val="0" />
+</private>
+
+<private name="ad23 eq switch">
+  <func name="VBC AD02 EQ Switch" val="0" />
+</private>
+
+<private name="da eq profile">
+  <func name="VBC DA EQ Profile Select" val="0" />
+</private>
+
+<private name="ad01 eq profile">
+  <func name="VBC AD01 EQ Profile Select" val="0" />
+</private>
+
+<private name="ad23 eq profile">
+  <func name="VBC AD23 EQ Profile Select" val="0" />
 </private>
 
 <private name="internal PA">
   <func name="Inter PA Config" val="304" />
 </private>
+
+<private name="internal HP PA">
+  <func name="Inter HP PA Config" val="7489" />
+</private>
+
+<private name="spk mute">
+  <func name="Speaker Mute" val="0" />
+</private>
+
+<private name="earpiece mute">
+  <func name="Earpiece Mute" val="0" />
+</private>
+
+<private name="hp mute">
+  <func name="HeadPhone Mute" val="0" />
+</private>
+
+<private name="Aud Codec Info">
+  <func name="Aud Codec Info" val="0" />
+</private>
+
+<!-- END OF MUST NOT modify private field directly -->
 
 <device name="builtin-mic">
   <path name="on">
@@ -105,15 +153,36 @@
 
 <device name="line">
   <path name="on">
+     <ctl name="HeadPhone Mute" val="1" />
      <ctl name="ADCL Mixer AILADCL Switch" val="1" />
      <ctl name="ADCR Mixer AIRADCR Switch" val="1" />
      <ctl name="Line Function" val="1" />
+     <ctl name="HeadPhone Mute" val="0" />
   </path>
   <path name="off">
      <ctl name="Line Function" val="0" />
      <ctl name="ADCL Mixer AILADCL Switch" val="0" />
      <ctl name="ADCR Mixer AIRADCR Switch" val="0" />
   </path>
+</device>
+
+<device name="digital-fm">
+<path name="on">
+<ctl name="Digital FM Function" val="1" />
+<ctl name="DA0 ADDST MUX" val="0" />
+<ctl name="DA1 ADDST MUX" val="0" />
+<ctl name="DA0 ADDFM MUX" val="1" />
+<ctl name="DA1 ADDFM MUX" val="1" />
+<ctl name="AD IISMUX" val="2" />
+</path>
+<path name="off">
+<ctl name="Digital FM Function" val="0" />
+<ctl name="DA0 ADDST MUX" val="0" />
+<ctl name="DA1 ADDST MUX" val="0" />
+<ctl name="DA0 ADDFM MUX" val="0" />
+<ctl name="DA1 ADDFM MUX" val="0" />
+<ctl name="AD IISMUX" val="0" />
+</path>
 </device>
 
 <device name="speaker">
@@ -142,21 +211,21 @@
    </path>
 </device>
 
-<device name="fm-mute">
-   <path name="on">
-     <ctl name="HeadPhone Function" val="0" />
-   </path>
-   <path name="off">
-     <ctl name="HeadPhone Function" val="1" />
-   </path>
-</device>
-
 <device name="earpiece">
    <path name="on">
      <ctl name="Earpiece Function" val="1" />
    </path>
    <path name="off">
      <ctl name="Earpiece Function" val="0" />
+   </path>
+</device>
+
+<device name="dual-mic-voice">
+   <path name="on">
+     <ctl name="ADCR Mixer AuxMICADCR Switch" val="0" />
+     <ctl name="ADCL Mixer MainMICADCL Switch" val="0" />
+   </path>
+   <path name="off">
    </path>
 </device>
 
