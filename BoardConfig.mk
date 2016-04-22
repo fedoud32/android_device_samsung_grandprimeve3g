@@ -26,7 +26,8 @@ TARGET_OTA_ASSERT_DEVICE                    := grandprimeve3g
 # Architecture
 TARGET_ARCH                                 := arm
 TARGET_NO_BOOTLOADER                        := true
-TARGET_BOARD_PLATFORM                       := hawaii
+TARGET_BOARD_PLATFORM                       := sc8830
+# Board Platform is not hawaii
 TARGET_CPU_ABI                              := armeabi-v7a
 TARGET_CPU_ABI2                             := armeabi
 TARGET_ARCH_VARIANT                         := armv7-a-neon
@@ -37,11 +38,12 @@ ARCH_ARM_HAVE_TLS_REGISTER                  := true
 ARCH_ARM_HAVE_NEON                          := true
 
 # Board
-TARGET_BOOTLOADER_BOARD_NAME                := grandprimeve3g
+TARGET_BOOTLOADER_BOARD_NAME                := 
+# Bootloader Board name is not grandprimeve3g. Check build.prop
 TARGET_NO_BOOTLOADER                        := true
+TARGET_NO_RADIOIMAGE                        := true
 
 # Platform
-TARGET_BOARD_PLATFORM                       := sc8830
 COMMON_GLOBAL_CFLAGS += -DSPRD_HARDWARE
 TARGET_BOARD_PLATFORM_GPU                   := mali-400 MP
 
@@ -61,7 +63,6 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE            := 1572864000
 BOARD_USERDATAIMAGE_PARTITION_SIZE          := 5872025600
 BOARD_FLASH_BLOCK_SIZE                      := 131072
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE           := ext4
-
 TARGET_USERIMAGES_USE_EXT4                  := true
 BOARD_HAS_LARGE_FILESYSTEM                  := true
 
@@ -92,7 +93,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH             := "/sys/devices/platform/dwc_otg.0/
 # TW_HAS_DOWNLOAD_MODE                      := true
 # TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID    := true
 # TW_BRIGHTNESS_PATH                        := "/sys/class/backlight/panel/brightness"
-HAVE_SELINUX := true
+HAVE_SELINUX                                := true
 
 # Hardware Rendering
 USE_OPENGL_RENDERER                         := true
@@ -156,11 +157,5 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE          := true
 BOARD_CHARGER_ENABLE_SUSPEND                := true
 BOARD_CHARGING_MODE_BOOTING_LPM             := /sys/class/power_supply/battery/batt_lp_charging
 
-# Enable dex-preoptimization to speed up the first boot sequence of an SDK AVD.
-# Note that this operation only works on Linux for now.
-ifeq ($(HOST_OS),linux)
-  ifeq ($(WITH_DEXPREOPT),)
-    WITH_DEXPREOPT := true
-  endif
-endif
-
+# Dexpreopt
+WITH_DEXPREOPT                              := true
