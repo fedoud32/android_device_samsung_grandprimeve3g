@@ -25,7 +25,6 @@ TARGET_OTA_ASSERT_DEVICE                    := grandprimeve3g
 
 # Architecture
 TARGET_ARCH                                 := arm
-TARGET_NO_BOOTLOADER                        := true
 TARGET_BOARD_PLATFORM                       := sc8830
 # Board Platform is not hawaii
 TARGET_CPU_ABI                              := armeabi-v7a
@@ -37,7 +36,7 @@ ARCH_ARM_HAVE_ARMV7A                        := true
 ARCH_ARM_HAVE_TLS_REGISTER                  := true
 ARCH_ARM_HAVE_NEON                          := true
 
-# Board
+# Bootloader
 TARGET_BOOTLOADER_BOARD_NAME                := 
 # Bootloader Board name is not grandprimeve3g. Check build.prop
 TARGET_NO_BOOTLOADER                        := true
@@ -99,15 +98,15 @@ HAVE_SELINUX                                := true
 USE_OPENGL_RENDERER                         := true
 BOARD_EGL_CFG                               := device/samsung/coreprimeve3g/egl/egl.cfg
 BOARD_EGL_NEEDS_LEGACY_FB                   := true
-COMMON_GLOBAL_CFLAGS += -DSC6820I_HWC -DBOARD_EGL_NEEDS_LEGACY_FB
+COMMON_GLOBAL_CFLAGS                        += -DSC6820I_HWC -DBOARD_EGL_NEEDS_LEGACY_FB
 
 # Camera
 USE_CAMERA_STUB                             := true
-COMMON_GLOBAL_CFLAGS += -DMR0_CAMERA_BLOB
+COMMON_GLOBAL_CFLAGS                        += -DMR0_CAMERA_BLOB
 
 # Audio
 BOARD_USES_GENERIC_AUDIO                    := true
-COMMON_GLOBAL_CFLAGS += -DMR0_AUDIO_BLOB
+COMMON_GLOBAL_CFLAGS                        += -DMR0_AUDIO_BLOB
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH                        := true
